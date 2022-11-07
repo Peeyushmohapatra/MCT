@@ -15,15 +15,8 @@
     }
 
     body {
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden
-    }
-
-    .container-1 {
-        background-color: rgb(255, 255, 255);
-        position: relative;
-        background-color: #FFFFFF;
+        overflow-x: hidden;
+        width: 100vw;
     }
 
     .taskbar {
@@ -32,15 +25,6 @@
         position: relative;
         background-color: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
-    }
-
-    .task-container {
-        height: 44px;
-        width: 1230px;
-        left: 345px;
-        top: 18px;
-        position: absolute;
-        bottom: 18px;
     }
 
     .p-one {
@@ -189,7 +173,7 @@
         height: 168px;
         display: flex;
         flex-wrap: wrap;
-        right: 689px;
+        left: 570px;
     }
 
     .workout {
@@ -209,11 +193,32 @@
         line-height: 84px;
         color: #FED233;
     }
+
+    .arrow {
+        display: flex;
+    }
+
+    .left-arrow {
+        width: 124px;
+        height: 124px;
+        position: relative;
+        top: 243px;
+        left: 227px;
+        margin: 0;
+    }
+
+    .right-arrow {
+        width: 124px;
+        height: 124px;
+        position: relative;
+        top: 243px;
+        left: 1458px;
+        margin:0;
+    }
 </style>
 <body>
-        <div class="container-1">
 
-            <div class="taskbar">
+        <div class="taskbar">
                     <p class="p-one">Home</p>
                     <p class="p-two">About Us</p>
                     <p class="p-three">Contact Us</p>
@@ -230,18 +235,21 @@
                 <p class="workout">Get Your Perfect Workout</p>
                 <p class="workout">With The <p style="font-style: italic;font-weight: 700;font-size: 64px;line-height: 84px;color: transparent;">.</p> <p class="workout-1"> Perfect Trainers</p> </p>
             </div>
+
             
 
+            <div class="arrow">
+                <div class="left-arrow">
+                    <svg  width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 48L37.6667 1.5V27.2817L94.5 27.3333V68.6667H37.6667V94.5L1.5 48Z" fill="#FED233" stroke="#FED233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
 
-        </div>
-
-
-
-        <div class="container-2"></div>
-        <div class="container-3"></div>
-        <div class="container-4"></div>
-        <div class="container-5"></div>
-        <div class="container-6"></div>
-        <div class="container-7"></div>
+                <div class="right-arrow">
+                    <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M94.5 48L58.3333 1.5V27.2817L1.5 27.3333V68.6667H58.3333V94.5L94.5 48Z" fill="#FED233" stroke="#FED233" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
+            </div>
 </body>
 </html>
