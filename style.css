@@ -166,14 +166,13 @@
 }
 
 .text {
-    width: 54%;
+    width: 54.1%;
     height: 2%;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
     top: 1.55%;
     left: 30%;
-
 }
 
 .p {
