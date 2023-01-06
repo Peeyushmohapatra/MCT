@@ -19,11 +19,20 @@
         const weathers = ["Clear.png","Clouds.jpg","Haze.png","Rainy.png","Smokey.png","Sunny.png","Snow.png","Mist.png"];
 
 
-        const nightBackGround = ["Clear_night.jpg","cloudy_night_image.jpg","Haze_night_img.jpg","Rainy_night_image.jpg","Smoky_night_image.jpg","Clear_night.jpg","Snow_night_image.jpg","Mist_night_image.jpg"]
-        const nightIcon = ["Clear_night_icon.jpg","Cloudy_night.png","Haze_night_logo.png","Rainy_night_logo.png","smoky_night_logo.png","Clear_night_icon.jpg","Snow_night_logo.webp","Mist.png"]
+        const nightBackGround = ["Clear_night.jpg","clouds_night.jpg","Haze_night_img.jpg","Rainy_night_image.jpg","Smoky_night_image.jpg","Clear_night_image.jpg","Snow_night_image.jpg","Mist_night_image.jpg","Fog_night_image.jpg"]
+        const nightIcon = ["Clear_night_icon.jpg","Clouds_night.png","Haze_night_logo.png","Rainy_night_logo.png","smoky_night_logo.png","Clear_night_icon.jpg","Snow_night_logo.webp","Mist.png","Fog_logo.png"]
 
+        
+
+        
         init()
         function init(){
+            addEventListener("keyup",(event) => {
+                if(event.key === "Enter"){
+                    getCoordinates()
+                }
+            })
+            
             button.addEventListener("click",getCoordinates)
         }
 
