@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui,'Segoe UI', Roboto,sans-serif;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: rgb(4, 4, 49);
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    background: url(./1540005.jpg);
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    padding-top: 40px;
+}
+
+.container {
+    height: 70%;
+    width: 70%;
+    display: flex;
+    background-color: rgb(221,225,227);
+    border-radius: 8px;
+}
+
+.left{
+    height: 100%;
+    width: 60%;
+    background-color: white;
+    border-radius: 0 0 50% 0%;
+}
+
+.right{
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#degree {
+    color: rgb(110,125,138);
+    font-size:120px;
+    font-weight: 300;
+}
+
+.degree_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    padding-left: 0px;
+}
+
+#weather_status {
+    color:rgb(222,225,228);
+    font-size: 50px;
+}
+
+#city {
+    color: rgb(167, 192, 218);
+}
+
+.hr{
+    width: 500px;
+    margin-left: 5.5%;
+}
+
+.condition_container{
+    height: 30%;
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+    padding: 0 10px;
+}
+
+.wind{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.wind_icon {
+color:rgb(33,150,243);
+}
+
+#wind_speed, #humidity_calc, #cloudiness_calc, #pressure_calc, #visibility_calc {
+    color:rgb(184, 203, 222);
+}
+
+#weather_logo {
+    height: 40%;
+    width: 45%;
+    border-radius: 8px;
+}
+
+#input_weather {
+    border: none;
+    padding: 0 10px;
+    border-radius: 50px;
+    height: 100%;
+}

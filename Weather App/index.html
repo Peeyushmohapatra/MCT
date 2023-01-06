@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="./style.css">
+<body>
+    <h1>Weather App</h1>
+    <div class="input_container">
+        <label for="city">Enter City: </label>
+        <input id="input_weather" value="" placeholder="Search For Your City">
+        <button id="button">Search</button>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div class="degree_container">
+                <p id="degree">||&deg;C</p>
+                <p id="weather_status">ll||ll</p>
+            </div>
+            <hr class="hr">
+            <div class="condition_container">
+                <div class="wind">
+                    <i class="fa-solid fa-wind wind_icon"></i>
+                    <h5 style="color: rgb(116, 116, 245);">Wind</h5>
+                    <div>
+                        <h3 id="wind_speed">-- || --</h3>
+                    </div>
+                </div>
+                <div class="wind">
+                    <!-- <h4>💧%</h4> -->
+                    <img height="17%" style="color: rgb(116, 116, 245);" src="https://cdn-icons-png.flaticon.com/512/728/728093.png" alt="">
+                    <h5 style="color: rgb(116, 116, 245);">Humidity</h5>
+                    <div>
+                        <h3 id="humidity_calc">-- || --</h3>
+                    </div>
+                </div>
+                <div class="wind">
+                    <i class="fa-solid fa-cloud wind_icon"></i>
+                    <h5 style="color: rgb(116, 116, 245);margin-top: 5px;">Cloudiness</h5>
+                    <div>
+                        <h3 id="cloudiness_calc">-- || --</h3>
+                    </div>
+                </div>
+                <div class="wind">
+                    <i class="fa-solid fa-temperature-three-quarters wind_icon"></i>
+                    <h5 style="color: rgb(116, 116, 245);margin-top: 5px;">Pressure</h5>
+                    <div>
+                        <h3 id="pressure_calc">-- || --</h3>
+                    </div>
+                </div>
+                <div class="wind">
+                    <i class="fa-solid fa-eye wind_icon"></i>
+                    <h5 style="color: rgb(116, 116, 245);margin-top: 5px;">Visibility</h5>
+                    <div>
+                        <h3 id="visibility_calc">-- || --</h3>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="right">
+            <h3 style="color:rgb(151, 191, 231)">City</h3>
+            <h2 id="city">ll||ll</h2>
+            <img id="weather_logo" src="./Clear.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    // navigator.geolocation.getCurrentPosition((location) => {
+    //     console.log(location.coords.latitude,location.coords.longitude);
+    // })
+
+    // getData()
+    // // API -----> https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid=133aca6a3bda2d32fd31c9ab64ad4343
+    
+    // async function getData(){
+    // const data = await fetch("https://api.openweathermap.org/data/2.5/weather?lat=28.644800&lon=77.216721&appid=133aca6a3bda2d32fd31c9ab64ad4343")
+    // const textData = await data.text();
+    // const jsonData = JSON.parse(textData);
+    // console.log(jsonData);
+    // }
+
+
+
+    // function getWeatherIcon(){
+
+    // }
+
+ 
+    // console.log(input.value,degree.innerText,weather.innerText,windSpeed.innerText,humidity.innerText,cloudiness.innerText);
+    
+</script>
+<script src="./script.js"></script>
+</html>
