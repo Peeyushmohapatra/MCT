@@ -15,12 +15,13 @@
     const left = document.getElementById("left");
     const CurrentDate = document.getElementById("date");
     const CurrentTime = document.getElementById("time");
+    const cityHeading = document.getElementById("cityHeading");
 
     
 
     setInterval(() => {
         let nowDate = new Date();
-        CurrentDate.innerText = `Date: ${nowDate.getDate()}:${nowDate.getMonth()+1}:${nowDate.getFullYear()}`
+        CurrentDate.innerText = new Date().toUTCString().slice(5, 16);
         CurrentTime.innerText = `Time: ${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getUTCSeconds()}`
     },1000)
     
@@ -90,7 +91,17 @@
                 if(weathers[i].includes(weather.innerText)){
                     image.setAttribute("src",weathers[i]);
                     body.style.background = `url(${backGround[i]})`
-                    body.style.backgroundSize = "100% 100%"
+                    body.style.backgroundSize = "100% 100%";
+                    weather.style.color = "navy";
+                    windSpeed.style.color = "navy";
+                    humidity.style.color = "navy";
+                    cloudiness.style.color = "navy";
+                    pressure.style.color = "navy";
+                    visibility.style.color = "navy";
+                    CurrentTime.style.color = "navy";
+                    CurrentDate.style.color = "navy";
+                    city.style.color = "navy";
+                    cityHeading.style.color = "navy";
                 }
             }
         }else{
@@ -98,7 +109,8 @@
                 if(nightIcon[i].includes(weather.innerText)){
                     image.setAttribute("src",nightIcon[i]);
                     body.style.background = `url(${nightBackGround[i]})`
-                    body.style.backgroundSize = "100% 100%"
+                    body.style.backgroundSize = "100% 100%";
+                    degree.style.color = "rgb(110,125,138)";
                 }
             }
         }
