@@ -26,7 +26,7 @@
         const weathers = ["Clear.png","Clouds.jpg","Haze.png","Rainy.png","Smoke.png","Sunny.png","Snow.png","Mist.png"];
 
 
-        const nightBackGround = ["Clear_night.jpg","clouds_night.jpg","Haze_night_img.jpg","Rainy_night_image.jpg","Smoke_night_image.jpg","Clear_night_image.jpg","Snow_night_image.jpg","Mist_night_image.jpg","Fog_night_image.jpg"]
+        const nightBackGround = ["Clear_night_image.jpg","clouds_night.jpg","Haze_night_img.jpg","Rainy_night_image.jpg","Smoke_night_image.jpg","Clear_night_image.jpg","Snow_night_image.jpg","Mist_night_image.jpg","Fog_night_image.jpg"]
         const nightIcon = ["Clear_night_icon.jpg","Clouds_night.png","Haze_night_logo.png","Rainy_night_logo.png","smoke_night_logo.png","Clear_night_icon.jpg","Snow_night_logo.webp","Mist.png","Fog_logo.png"]
 
             addEventListener("keyup",(event) => {
