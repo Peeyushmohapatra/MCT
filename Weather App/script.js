@@ -12,15 +12,26 @@
     const city = document.getElementById("city");
     const body = document.getElementsByTagName("body")[0];
     const container = document.getElementById("container");
-    const left = document.getElementById("left")
+    const left = document.getElementById("left");
+    const CurrentDate = document.getElementById("date");
+    const CurrentTime = document.getElementById("time");
+
+    
+
+    setInterval(() => {
+        let nowDate = new Date();
+        CurrentDate.innerText = `Date: ${nowDate.getDate()}:${nowDate.getMonth()+1}:${nowDate.getFullYear()}`
+        CurrentTime.innerText = `Time: ${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getUTCSeconds()}`
+    },1000)
+    
 
         // getCoordinates()
-        const backGround = ["Clear_Weather.jpg","Clouds_weather.jpg","Haze_weather.jpg","Rainy_Day_image.jpg","Smoky_Weather.webp","Sunny_weather.jpg","Snow_weather.jpg","Mist_weather.jpg"];
-        const weathers = ["Clear.png","Clouds.jpg","Haze.png","Rainy.png","Smokey.png","Sunny.png","Snow.png","Mist.png"];
+        const backGround = ["Clear_Weather.jpg","Clouds_weather.jpg","Haze_weather.jpg","Rainy_Day_image.jpg","Smoke_Weather.webp","Sunny_weather.jpg","Snow_weather.jpg","Mist_weather.jpg"];
+        const weathers = ["Clear.png","Clouds.jpg","Haze.png","Rainy.png","Smoke.png","Sunny.png","Snow.png","Mist.png"];
 
 
-        const nightBackGround = ["Clear_night.jpg","clouds_night.jpg","Haze_night_img.jpg","Rainy_night_image.jpg","Smoky_night_image.jpg","Clear_night_image.jpg","Snow_night_image.jpg","Mist_night_image.jpg","Fog_night_image.jpg"]
-        const nightIcon = ["Clear_night_icon.jpg","Clouds_night.png","Haze_night_logo.png","Rainy_night_logo.png","smoky_night_logo.png","Clear_night_icon.jpg","Snow_night_logo.webp","Mist.png","Fog_logo.png"]
+        const nightBackGround = ["Clear_night.jpg","clouds_night.jpg","Haze_night_img.jpg","Rainy_night_image.jpg","Smoke_night_image.jpg","Clear_night_image.jpg","Snow_night_image.jpg","Mist_night_image.jpg","Fog_night_image.jpg"]
+        const nightIcon = ["Clear_night_icon.jpg","Clouds_night.png","Haze_night_logo.png","Rainy_night_logo.png","smoke_night_logo.png","Clear_night_icon.jpg","Snow_night_logo.webp","Mist.png","Fog_logo.png"]
 
         
 
@@ -37,29 +48,17 @@
         }
 
     async function getCoordinates(){
-        const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=133aca6a3bda2d32fd31c9ab64ad4343`);
-        const textData = await getData.text();
-        const jsonData = JSON.parse(textData);
+        const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=133aca6a3bda2d32fd31c9ab64ad4343`); //Requesting To Server For Data.
+        const textData = await getData.text(); //Converting Fetched Data In Text Formate.
+        const jsonData = JSON.parse(textData); //Converting Text Into Object.
         console.log(jsonData);
-        const lon = jsonData.coord.lon;
-        const lat = jsonData.coord.lat;
-
-        getWeatherCondition(lon,lat);
-    }
-
-
-    async function getWeatherCondition(lon,lat){
-        const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=133aca6a3bda2d32fd31c9ab64ad4343`);
-        const textData = await getData.text();
-        const jsonData = JSON.parse(textData);
-        console.log(jsonData);
-
-        let date = new Date();
+        
+        let date = new Date(); //Current Time,Date,Day,Month,Year.
         let currDate = `${date.getUTCDate()}:${date.getUTCMonth()+1}:${date.getUTCFullYear()}`
         console.log(currDate);
 
-        let time = date.getUTCHours();
-        time = time+5;
+        let time = date.getHours();
+        time = time;
         console.log(typeof time,time);
         let currTime = `${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`
         console.log(currTime);
@@ -67,7 +66,7 @@
 
 
         const weatherIcon = jsonData.weather[0].icon
-        city.innerText = jsonData.name;
+        city.innerText = `${jsonData.name},${jsonData.sys.country}`;
         humidity.innerText = `${jsonData.main.humidity}%`;
         const km = jsonData.visibility/1000;
         visibility.innerText = `${km.toFixed(1)}Km`;
