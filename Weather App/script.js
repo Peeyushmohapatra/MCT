@@ -17,13 +17,8 @@
     const CurrentTime = document.getElementById("time");
     const cityHeading = document.getElementById("cityHeading");
 
-    
+        CurrentDate.innerText = `Date: ${new Date().toUTCString().slice(5, 16)}`;
 
-    setInterval(() => {
-        let nowDate = new Date();
-        CurrentDate.innerText = new Date().toUTCString().slice(5, 16);
-        CurrentTime.innerText = `Time: ${nowDate.getHours()}:${nowDate.getMinutes()}:${nowDate.getUTCSeconds()}`
-    },1000)
     
 
         // getCoordinates()
