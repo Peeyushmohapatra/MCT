@@ -1,23 +1,23 @@
 
-    const input = document.getElementById("input_weather");
-    const degree = document.getElementById("degree");
-    const weather = document.getElementById("weather_status");
-    const windSpeed = document.getElementById("wind_speed");
-    const humidity = document.getElementById("humidity_calc");
-    const cloudiness = document.getElementById("cloudiness_calc");
-    const pressure = document.getElementById("pressure_calc");
-    const visibility = document.getElementById("visibility_calc");
-    const image = document.getElementById("weather_logo");
-    const button = document.getElementById("button");
-    const city = document.getElementById("city");
-    const body = document.getElementsByTagName("body")[0];
-    const container = document.getElementById("container");
-    const left = document.getElementById("left");
+    const input       = document.getElementById("input_weather");
+    const degree      = document.getElementById("degree");
+    const weather     = document.getElementById("weather_status");
+    const windSpeed   = document.getElementById("wind_speed");
+    const humidity    = document.getElementById("humidity_calc");
+    const cloudiness  = document.getElementById("cloudiness_calc");
+    const pressure    = document.getElementById("pressure_calc");
+    const visibility  = document.getElementById("visibility_calc");
+    const image       = document.getElementById("weather_logo");
+    const button      = document.getElementById("button");
+    const city        = document.getElementById("city");
+    const body        = document.getElementsByTagName("body")[0];
+    const container   = document.getElementById("container");
+    const left        = document.getElementById("left");
     const CurrentDate = document.getElementById("date");
     const CurrentTime = document.getElementById("time");
     const cityHeading = document.getElementById("cityHeading");
 
-        CurrentDate.innerText = `Date: ${new Date().toUTCString().slice(5, 16)}`;
+    CurrentDate.innerText = `Date: ${new Date().toUTCString().slice(5, 16)}`;
 
     
 
@@ -29,11 +29,6 @@
         const nightBackGround = ["Clear_night.jpg","clouds_night.jpg","Haze_night_img.jpg","Rainy_night_image.jpg","Smoke_night_image.jpg","Clear_night_image.jpg","Snow_night_image.jpg","Mist_night_image.jpg","Fog_night_image.jpg"]
         const nightIcon = ["Clear_night_icon.jpg","Clouds_night.png","Haze_night_logo.png","Rainy_night_logo.png","smoke_night_logo.png","Clear_night_icon.jpg","Snow_night_logo.webp","Mist.png","Fog_logo.png"]
 
-        
-
-        
-        init()
-        function init(){
             addEventListener("keyup",(event) => {
                 if(event.key === "Enter"){
                     getCoordinates()
@@ -41,23 +36,23 @@
             })
             
             button.addEventListener("click",getCoordinates)
-        }
+        
 
     async function getCoordinates(){
         const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=133aca6a3bda2d32fd31c9ab64ad4343`); //Requesting To Server For Data.
         const textData = await getData.text(); //Converting Fetched Data In Text Formate.
         const jsonData = JSON.parse(textData); //Converting Text Into Object.
-        console.log(jsonData);
+        // console.log(jsonData);
         
         let date = new Date(); //Current Time,Date,Day,Month,Year.
         let currDate = `${date.getUTCDate()}:${date.getUTCMonth()+1}:${date.getUTCFullYear()}`
-        console.log(currDate);
+        // console.log(currDate);
 
         let time = date.getHours();
-        time = time;
-        console.log(typeof time,time);
-        let currTime = `${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`
-        console.log(currTime);
+        // time = time;
+        // console.log(typeof time,time);
+        // let currTime = `${date.getUTCHours()}:${date.getUTCMinutes()}:${date.getUTCSeconds()}`
+        // console.log(currTime);
 
 
 
@@ -72,16 +67,11 @@
         windSpeed.innerText = `${jsonData.wind.speed}kph`
         weather.innerText = jsonData.weather[0].main;
         cloudiness.innerText = `${jsonData.clouds.all}%`
-        // console.log(weather);
+
+
         
 
-        if(time>=5 && time<=18){
-            
-        }else{
-            container.style.backgroundColor = "rgba(0, 0, 0, 0.598)";
-            left.style.backgroundColor = "rgba(0, 0, 0, 0.550)"
-        }
-        if(time>=5 && time<=18){
+        if(time>=5 && time<=17){
             for(let i=0; i<weathers.length; i++){
                 if(weathers[i].includes(weather.innerText)){
                     image.setAttribute("src",weathers[i]);
@@ -108,5 +98,7 @@
                     degree.style.color = "rgb(110,125,138)";
                 }
             }
+            container.style.backgroundColor = "rgba(0, 0, 0, 0.598)";
+            left.style.backgroundColor = "rgba(0, 0, 0, 0.550)"
         }
     }
