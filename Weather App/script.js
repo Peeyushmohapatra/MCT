@@ -39,13 +39,13 @@
         
 
     async function getCoordinates(){
-        const getData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=133aca6a3bda2d32fd31c9ab64ad4343`); //Requesting To Server For Data.
+        const getData  = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=133aca6a3bda2d32fd31c9ab64ad4343`); //Requesting To Server For Data.
         const textData = await getData.text(); //Converting Fetched Data In Text Formate.
         const jsonData = JSON.parse(textData); //Converting Text Into Object.
         // console.log(jsonData);
         
         let date = new Date(); //Current Time,Date,Day,Month,Year.
-        let currDate = `${date.getUTCDate()}:${date.getUTCMonth()+1}:${date.getUTCFullYear()}`
+        let currDate = `${date.getUTCDate()}:${date.getUTCMonth()+1}:${date.getUTCFullYear()}`;
         // console.log(currDate);
 
         let time = date.getHours();
@@ -56,13 +56,13 @@
 
 
 
-        const weatherIcon = jsonData.weather[0].icon
+        const weatherIcon = jsonData.weather[0].icon;
         city.innerText = `${jsonData.name},${jsonData.sys.country}`;
         humidity.innerText = `${jsonData.main.humidity}%`;
         const km = jsonData.visibility/1000;
         visibility.innerText = `${km.toFixed(1)}Km`;
         pressure.innerText = `${jsonData.main.pressure}hPa`;
-        const celciouc = jsonData.main.temp - 273.15
+        const celciouc = jsonData.main.temp - 273.15;
         degree.innerHTML = `${celciouc.toFixed(1)}&deg;C`;
         windSpeed.innerText = `${jsonData.wind.speed}kph`
         weather.innerText = jsonData.weather[0].main;
@@ -93,12 +93,12 @@
             for(let i=0; i<nightIcon.length; i++){
                 if(nightIcon[i].includes(weather.innerText)){
                     image.setAttribute("src",nightIcon[i]);
-                    body.style.background = `url(${nightBackGround[i]})`
+                    body.style.background = `url(${nightBackGround[i]})`;
                     body.style.backgroundSize = "100% 100%";
                     degree.style.color = "rgb(110,125,138)";
                 }
             }
             container.style.backgroundColor = "rgba(0, 0, 0, 0.598)";
-            left.style.backgroundColor = "rgba(0, 0, 0, 0.550)"
+            left.style.backgroundColor = "rgba(0, 0, 0, 0.550)";
         }
     }
