@@ -62,7 +62,7 @@ body {
   gap: 10px;
 }
 
-.green-seat {
+.seat.selected {
   height: 32px;
   width: 35px;
   background-color: rgb(49, 215, 169);
