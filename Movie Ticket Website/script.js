@@ -9,6 +9,7 @@ const ticketPricee = document.getElementById("select");
 let ticketPrice = Number(selectedMovie.value);
 const priceToshown = document.getElementById("number");
 const containerr = document.getElementsByClassName("seats-container")[0];
+const ticket = document.getElementById("ticket")
 let arrLocalStorage = [...seats];
 getdatafromLocalstorage();
 function setMovieData(movieIdx, moviePrice) {
@@ -60,6 +61,7 @@ function display() {
   
     count.innerText = selectedSeatsCount;
     total.innerText = selectedSeatsCount * ticketPrice;
+    ticket.innerText = JSON.parse(localStorage.getItem("selectesSeats"))
   }
 
 display();
