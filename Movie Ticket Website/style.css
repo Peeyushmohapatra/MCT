@@ -166,17 +166,24 @@ body {
   gap: 10px;
 }
 
+.price-containe{
+  display: flex;
+  color: white;
+  gap: 10px;
+}
+
 #number {
   color: rgb(109, 230, 238);
 }
 
+#bookedSeats{
+  color: rgb(109, 230, 238);
+}
 #number-of-seats{
   color: rgb(109, 230, 238);
 }
 
-.seat:hover {
-  zoom: 115%;
-}
+
 
 .seat:hover {
   zoom: 115%;
@@ -199,5 +206,28 @@ body {
 }
 
 .clicked-seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.selected-count{
+  height: 30px;
+  width: 35px;
+  background-color: rgb(49, 215, 169);
+  border: 2px solid rgb(33, 55, 97);
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  cursor: pointer;
+}
+
+.selected-count:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+
+.selected-count:hover {
+  zoom: 115%;
+}
+
+.selected-count:nth-last-of-type(2) {
   margin-left: 18px;
 }
