@@ -7,7 +7,7 @@ const priceToshown = document.getElementById("number");
 const container = document.getElementsByClassName("seats-container")[0];
 let arrLocalStorage = [];
 const display = document.getElementById("bookedSeats");
-const ticket = document.getElementById("ticket");
+
 
 
 
@@ -34,7 +34,6 @@ for (let i = 0; i < seats.length; i++) {
     }
     booking.innerText = selectedSeats.length;
     priceToshown.innerText = selectedSeats.length * ticketPrice.value;
-    ticket.innerText = JSON.parse(localStorage.getItem("selectedSeats"))
   });
 }
 ticketPrice.addEventListener("change", () => {
